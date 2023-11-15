@@ -1,0 +1,173 @@
+Команда 1. С флагами
+(venv) PS C:\...\test_1> python -m doctest -o NORMALIZE_WHITESPACE -o REPORT_NDIFF -v test_1.py
+Trying:
+    encode('SOS') # doctest: -NORMALIZE_WHITESPACE, -REPORT_NDIFF
+Expecting:
+    '... --- ...'
+ok
+Trying:
+    encode('SAVE, OUR, SOULS')
+Expecting:
+    '... .- ...- . --..-- --- ..- .-. --..-- ... --- ..- .-.. ...'
+**********************************************************************
+File "C:\...\test_1\test_1.py", line 34, in test_1.encode
+Failed example:
+    encode('SAVE, OUR, SOULS')
+Exception raised:
+    Traceback (most recent call last):
+      File "C:\...\Python\Python311\Lib\doctest.py", line 1351, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest test_1.encode[1]>", line 1, in <module>
+        encode('SAVE, OUR, SOULS')
+      File "C:\Users\Наташа\Documents\Avito\testing_methods\test_1\test_1.py", line 64, in encode
+        encoded_signs = [
+                        ^
+      File "C:\...\test_1\test_1.py", line 65, in <listcomp>
+        LETTER_TO_MORSE[letter] for letter in message
+        ~~~~~~~~~~~~~~~^^^^^^^^
+    KeyError: ','
+Trying:
+    encode('SAVE/OUR/SOULS') # doctest: -NORMALIZE_WHITESPACE
+Expecting:
+    '... .- ...- . -..-. --- ..- .-. -..-. ... --- ..- .-.. ...'
+ok
+Trying:
+    encode('SAVE OUR SOULS') # doctest: -REPORT_NDIFF
+Expecting:
+    '... .- ...- . --- ..- .-. ... --- ..- .-.. ...'
+ok
+Trying:
+    encode('SAVE OUR SOULS') # doctest: -NORMALIZE_WHITESPACE
+Expecting:
+    '... .- ...- . --- ..- .-. ... --- ..- .-.. ...'
+**********************************************************************
+File "C:\...\test_1\test_1.py", line 43, in test_1.encode
+Failed example:
+    encode('SAVE OUR SOULS') # doctest: -NORMALIZE_WHITESPACE
+Differences (ndiff with -expected +actual):
+    - '... .- ...- . --- ..- .-. ... --- ..- .-.. ...'
+    + '... .- ...- .   --- ..- .-.   ... --- ..- .-.. ...'
+    ?               ++             ++
+Trying:
+    encode('123') # doctest: -NORMALIZE_WHITESPACE, -REPORT_NDIFF
+Expecting:
+    '.---- ..--- ...--'
+ok
+Trying:
+    encode('') # doctest: -NORMALIZE_WHITESPACE, -REPORT_NDIFF
+Expecting:
+    ''
+ok
+Trying:
+    encode('#%') # doctest: -NORMALIZE_WHITESPACE, -REPORT_NDIFF
+Expecting:
+    Traceback (most recent call last):
+        ...
+    KeyError: '#'
+ok
+Trying:
+    encode('$!@') # doctest: -NORMALIZE_WHITESPACE, -REPORT_NDIFF
+Expecting:
+    Traceback (most recent call last):
+        ...
+    KeyError: '$'
+ok
+1 items had no tests:
+    test_1
+**********************************************************************
+1 items had failures:
+   2 of   9 in test_1.encode
+9 tests in 2 items.
+7 passed and 2 failed.
+***Test Failed*** 2 failures.
+
+
+Команда 2. Без флагов
+(venv) PS C:\...\test_1> python -m doctest -v test_1.py
+Trying:
+    encode('SOS') # doctest: -NORMALIZE_WHITESPACE, -REPORT_NDIFF
+Expecting:
+    '... --- ...'
+ok
+Trying:
+    encode('SAVE, OUR, SOULS')
+Expecting:
+    '... .- ...- . --..-- --- ..- .-. --..-- ... --- ..- .-.. ...'
+**********************************************************************
+File "C:\...\test_1.py", line 34, in test_1.encode
+Failed example:
+    encode('SAVE, OUR, SOULS')
+Exception raised:
+    Traceback (most recent call last):
+      File "C:\...\Python\Python311\Lib\doctest.py", line 1351, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest test_1.encode[1]>", line 1, in <module>
+        encode('SAVE, OUR, SOULS')
+      File "C:\...\test_1\test_1.py", line 64, in encode
+        encoded_signs = [
+                        ^
+      File "C:\...\test_1\test_1.py", line 65, in <listcomp>
+        LETTER_TO_MORSE[letter] for letter in message
+        ~~~~~~~~~~~~~~~^^^^^^^^
+    KeyError: ','
+Trying:
+    encode('SAVE/OUR/SOULS') # doctest: -NORMALIZE_WHITESPACE
+Expecting:
+    '... .- ...- . -..-. --- ..- .-. -..-. ... --- ..- .-.. ...'
+ok
+Trying:
+    encode('SAVE OUR SOULS') # doctest: -REPORT_NDIFF
+Expecting:
+    '... .- ...- . --- ..- .-. ... --- ..- .-.. ...'
+**********************************************************************
+File "C:\...\test_1\test_1.py", line 40, in test_1.encode
+Failed example:
+    encode('SAVE OUR SOULS') # doctest: -REPORT_NDIFF
+Expected:
+    '... .- ...- . --- ..- .-. ... --- ..- .-.. ...'
+Got:
+    '... .- ...- .   --- ..- .-.   ... --- ..- .-.. ...'
+Trying:
+    encode('SAVE OUR SOULS') # doctest: -NORMALIZE_WHITESPACE
+Expecting:
+    '... .- ...- . --- ..- .-. ... --- ..- .-.. ...'
+**********************************************************************
+File "C:\...\test_1\test_1.py", line 43, in test_1.encode
+Failed example:
+    encode('SAVE OUR SOULS') # doctest: -NORMALIZE_WHITESPACE
+Expected:
+    '... .- ...- . --- ..- .-. ... --- ..- .-.. ...'
+Got:
+    '... .- ...- .   --- ..- .-.   ... --- ..- .-.. ...'
+Trying:
+    encode('123') # doctest: -NORMALIZE_WHITESPACE, -REPORT_NDIFF
+Expecting:
+    '.---- ..--- ...--'
+ok
+Trying:
+    encode('') # doctest: -NORMALIZE_WHITESPACE, -REPORT_NDIFF
+Expecting:
+    ''
+ok
+Trying:
+    encode('#%') # doctest: -NORMALIZE_WHITESPACE, -REPORT_NDIFF
+Expecting:
+    Traceback (most recent call last):
+        ...
+    KeyError: '#'
+ok
+Trying:
+    encode('$!@') # doctest: -NORMALIZE_WHITESPACE, -REPORT_NDIFF
+Expecting:
+    Traceback (most recent call last):
+        ...
+    KeyError: '$'
+ok
+1 items had no tests:
+    test_1
+**********************************************************************
+1 items had failures:
+   3 of   9 in test_1.encode
+9 tests in 2 items.
+6 passed and 3 failed.
+***Test Failed*** 3 failures.

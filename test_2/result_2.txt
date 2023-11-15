@@ -1,0 +1,12 @@
+Запуск 1
+============================= test session starts =============================
+collecting ... collected 4 items
+
+test_2.py::test_decode[... --- ...-SOS] PASSED                           [ 25%]
+test_2.py::test_decode[... .- ...- . --- ..- .-. ... --- ..- .-.. ...-SAVEOURSOULS] PASSED [ 50%]
+test_2.py::test_decode[.---- ..--- ...---123] PASSED                     [ 75%]
+test_2.py::test_decode[... .- ...- . --..-- --- ..- .-. --..-- ... --- ..- .-.. ...-SAVE, OUR, SOULS] PASSED [100%]
+
+============================== 4 passed in 0.04s ==============================
+
+Process finished with exit code 0

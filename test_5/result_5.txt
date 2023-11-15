@@ -1,0 +1,16 @@
+(venv) PS C:\...\test_5> coverage run -m unittest -v test_5
+test_format_dmy (test_5.TestWhatIsYearNow.test_format_dmy) ... ok
+test_format_random (test_5.TestWhatIsYearNow.test_format_random) ... ok
+test_format_ymd (test_5.TestWhatIsYearNow.test_format_ymd) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.162s
+
+OK
+(venv) PS C:\...\test_5> coverage report
+Name                  Stmts   Miss  Cover
+-----------------------------------------
+test_5.py                17      0   100%
+what_is_year_now.py      24      4    83%
+-----------------------------------------
+TOTAL                    41      4    90%
